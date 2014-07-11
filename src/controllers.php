@@ -1,6 +1,6 @@
 <?php
 
-use Atrapalo\Catalog\Interactor\GenericUseCaseRequest;
+use Atrapalo\Oms\Interactor\GenericUseCaseRequest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;

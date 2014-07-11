@@ -1,9 +1,7 @@
 <?php
 
-namespace Atrapalo\Catalog\Interactor;
+namespace Atrapalo\Oms\Interactor;
 
-use Atrapalo\Catalog\Domain\Hike\Hike;
-use Atrapalo\Catalog\Domain\Hike\HikeId;
 use Doctrine\ORM\EntityManager;
 
 class GenericUseCase

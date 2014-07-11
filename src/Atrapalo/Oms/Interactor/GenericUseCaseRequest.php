@@ -1,6 +1,6 @@
 <?php
 
-namespace Atrapalo\Catalog\Interactor;
+namespace Atrapalo\Oms\Interactor;
 
 class GenericUseCaseRequest
 {

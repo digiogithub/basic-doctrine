@@ -1,6 +1,6 @@
 <?php
 
-use Atrapalo\Catalog\Interactor\GenericUseCase;
+use Atrapalo\Oms\Interactor\GenericUseCase;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Setup;
 use Silex\Application;
