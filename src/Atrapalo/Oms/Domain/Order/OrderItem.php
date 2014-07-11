@@ -20,6 +20,11 @@ class OrderItem
     private $orderId;
 
     /**
+     * @var float
+     */
+    private $price;
+
+    /**
      * @param string $description
      */
     public function setDescription($description)
@@ -65,5 +70,21 @@ class OrderItem
     public function getOrderId()
     {
         return $this->orderId;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 }
