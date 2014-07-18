@@ -13,7 +13,7 @@ $console->setDispatcher($app['dispatcher']);
 $console
     ->register('run')
     ->setDefinition(array(
-        new InputArgument('address', InputArgument::OPTIONAL, 'Address:port', 'localhost:9000')
+        new InputArgument('address', InputArgument::OPTIONAL, 'Address:port', '127.0.0.1:8080')
     ))
     ->setDescription('Runs the application with PHP built-in web server')
     ->setHelp(<<<EOF
@@ -23,7 +23,7 @@ The <info>%command.name%</info> command runs the embedded Sismo web server:
 
 You can also customize the default address and port the web server listens to:
 
-    <info>%command.full_name% 127.0.0.1:8080</info>
+    <info>%command.full_name% 127.0.0.1:8000</info>
 EOF
     )
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($console) {

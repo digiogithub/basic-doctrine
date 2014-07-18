@@ -11,13 +11,16 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 $app->get('/', function () use ($app) {
 
-    $request = new GenericUseCaseRequest([
+    $entityManager = $app['entity_manager'];
 
+    // $entityManager->find('Chinook\Store\Domain\Album', 1);
+
+    var_dump(new \Chinook\Store\Domain\Album());
+    exit;
+
+    return $app['twig']->render('index.html.twig', [
+        'message' => 'Hello World from Silex!'
     ]);
-
-    $response = $app['generic_use_case']->execute($request);
-
-    return $app['twig']->render('index.html.twig', $response->getAll());
 
 })
 ->bind('homepage')

@@ -25,15 +25,9 @@ $app['entity_manager'] = $app->share(function($app) {
     return EntityManager::create(
         [
             'driver' => 'pdo_sqlite',
-            'path' => __DIR__ . '/../data/database.sqlite'
+            'path' => __DIR__ . '/../data/chinook.sqlite'
         ],
         $config
-    );
-});
-
-$app['generic_use_case'] = $app->share(function($app) {
-    return new GenericUseCase(
-        $app['entity_manager']
     );
 });
 
