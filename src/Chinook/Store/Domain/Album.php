@@ -2,6 +2,9 @@
 
 namespace Chinook\Store\Domain;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 class Album
 {
     /**
@@ -15,9 +18,19 @@ class Album
     private $title;
 
     /**
-     * @var integer
+     * @var Artist
      */
-    private $artistId;
+    private $artist;
+
+    /**
+     * @var Collection
+     */
+    private $tracks;
+
+    public function __construct()
+    {
+        $this->tracks = new ArrayCollection();
+    }
 
     /**
      * @param int $anAlbumId
@@ -36,19 +49,19 @@ class Album
     }
 
     /**
-     * @param int $anArtistId
+     * @param Artist $anArtist
      */
-    public function setArtistId($anArtistId)
+    public function setArtist(Artist $anArtist)
     {
-        $this->artistId = $anArtistId;
+        $this->artist = $anArtist;
     }
 
     /**
-     * @return int
+     * @return Artist
      */
-    public function getArtistId()
+    public function getArtist()
     {
-        return $this->artistId;
+        return $this->artist;
     }
 
     /**
@@ -65,5 +78,38 @@ class Album
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Add tracks
+     *
+     * @param Track $tracks
+     * @return Album
+     */
+    public function addTrack(Track $tracks)
+    {
+        $this->tracks[] = $tracks;
+
+        return $this;
+    }
+
+    /**
+     * Remove tracks
+     *
+     * @param Track $tracks
+     */
+    public function removeTrack(Track $tracks)
+    {
+        $this->tracks->removeElement($tracks);
+    }
+
+    /**
+     * Get tracks
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTracks()
+    {
+        return $this->tracks;
     }
 }

@@ -36,7 +36,7 @@ EOF
 
         $output->writeln(sprintf("Application running on <info>%s</info>\n", $input->getArgument('address')));
 
-        $builder = new ProcessBuilder([PHP_BINARY, '-S', $input->getArgument('address'), $frontController]);
+        $builder = new ProcessBuilder([PHP_BINARY, '-S', $input->getArgument('address'), '-t', __DIR__ . '/../web', $frontController]);
 
         $builder->setWorkingDirectory(getcwd());
         $builder->setTimeout(null);

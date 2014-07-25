@@ -2,6 +2,9 @@
 
 namespace Chinook\Store\Domain;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 class Artist
 {
     /**
@@ -13,6 +16,16 @@ class Artist
      * @var string
      */
     private $name;
+
+    /**
+     * @var Collection
+     */
+    private $albums;
+
+    public function __construct()
+    {
+        $this->albums = new ArrayCollection();
+    }
 
     /**
      * Get artistid
@@ -45,5 +58,41 @@ class Artist
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Add albums
+     *
+     * @param Album $album
+     *
+     * @return Artist
+     */
+    public function addAlbum(Album $album)
+    {
+        $album->setArtist($this);
+
+        $this->albums[] = $album;
+
+        return $this;
+    }
+
+    /**
+     * Remove albums
+     *
+     * @param Album $album
+     */
+    public function removeAlbum(Album $album)
+    {
+        $this->albums->removeElement($album);
+    }
+
+    /**
+     * Get albums
+     *
+     * @return Collection
+     */
+    public function getAlbums()
+    {
+        return $this->albums;
     }
 }

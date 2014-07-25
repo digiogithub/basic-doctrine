@@ -15,19 +15,19 @@ class Track
     private $name;
 
     /**
-     * @var int
+     * @var Album
      */
-    private $albumId;
+    private $album;
 
     /**
-     * @var integer
+     * @var MediaType
      */
-    private $mediaTypeId;
+    private $mediaType;
 
     /**
-     * @var integer
+     * @var Genre
      */
-    private $genreId;
+    private $genre;
 
     /**
      * @var string
@@ -85,12 +85,12 @@ class Track
     /**
      * Set albumid
      *
-     * @param integer $anAlbumId
+     * @param ALbum $anAlbum
      * @return Track
      */
-    public function setAlbumId($anAlbumId)
+    public function setAlbum($anAlbum)
     {
-        $this->albumId = $anAlbumId;
+        $this->album = $anAlbum;
 
         return $this;
     }
@@ -98,22 +98,22 @@ class Track
     /**
      * Get albumid
      *
-     * @return integer 
+     * @return Album
      */
-    public function getAlbumId()
+    public function getAlbum()
     {
-        return $this->albumId;
+        return $this->album;
     }
 
     /**
      * Set mediatypeid
      *
-     * @param integer $aMediaTypeId
+     * @param MediaType $aMediaType
      * @return Track
      */
-    public function setMediaTypeId($aMediaTypeId)
+    public function setMediaType($aMediaType)
     {
-        $this->mediaTypeId = $aMediaTypeId;
+        $this->mediaType = $aMediaType;
 
         return $this;
     }
@@ -121,22 +121,22 @@ class Track
     /**
      * Get mediatypeid
      *
-     * @return integer 
+     * @return MediaType
      */
-    public function getMediaTypeId()
+    public function getMediaType()
     {
-        return $this->mediaTypeId;
+        return $this->mediaType;
     }
 
     /**
      * Set genreid
      *
-     * @param integer $aGenreId
+     * @param Genre $aGenre
      * @return Track
      */
-    public function setGenreId($aGenreId)
+    public function setGenre($aGenre)
     {
-        $this->genreId = $aGenreId;
+        $this->genre = $aGenre;
 
         return $this;
     }
@@ -146,9 +146,9 @@ class Track
      *
      * @return integer 
      */
-    public function getGenreId()
+    public function getGenre()
     {
-        return $this->genreId;
+        return $this->genre;
     }
 
     /**

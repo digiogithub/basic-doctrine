@@ -1,6 +1,8 @@
 <?php
 
 use Atrapalo\Oms\Interactor\GenericUseCaseRequest;
+use Chinook\Store\Domain\Album;
+use Chinook\Store\Domain\Artist;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -13,13 +15,13 @@ $app->get('/', function () use ($app) {
 
     $entityManager = $app['entity_manager'];
 
-    // $entityManager->find('Chinook\Store\Domain\Album', 1);
-
-    var_dump(new \Chinook\Store\Domain\Album());
-    exit;
+    $startTime = microtime(true);
+    $artists = $entityManager->getRepository('Chinook\Store\Domain\Artist')->findAll();
+    $endTime = microtime(true);
 
     return $app['twig']->render('index.html.twig', [
-        'message' => 'Hello World from Silex!'
+        'artists' => $artists,
+        'totalTime' => ($endTime - $startTime)
     ]);
 
 })

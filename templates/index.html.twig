@@ -1,5 +1,34 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    {{ message }}
+<div class="row">
+    <div class="large-12 columns">
+        <h1>Artists list</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for artist in artists %}
+                <tr>
+                    <td>{{ artist.artistId }}</td>
+                    <td>{{ artist.name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <p>TOTAL TIME: {{ totalTime }} seconds</p>
+    </div>
+</div>
 {% endblock %}
